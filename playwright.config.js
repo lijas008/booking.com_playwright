@@ -41,11 +41,8 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
-        headless: !!process.env.CI,
-        slowMo: process.env.CI ? 0 : 100,
-        launchOptions: {
-          args: process.env.CI ? ['--no-sandbox', '--disable-setuid-sandbox'] : []
-        }
+        headless: false,
+        slowMo: 100
        },
     },
 
